@@ -12,5 +12,6 @@ RUN apk add --no-cache bash ca-certificates coreutils findutils git python3 wget
     && chmod +x /usr/local/bin/helm
 
 RUN helm version --client
+RUN helm init -c
 
 ENTRYPOINT ["helm"]
