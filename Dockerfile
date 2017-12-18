@@ -13,5 +13,6 @@ RUN apk add --no-cache bash ca-certificates coreutils findutils git python3 wget
 
 RUN helm version --client
 RUN helm init -c
+RUN helm plugin install https://github.com/technosophos/helm-template
 
 ENTRYPOINT ["helm"]
