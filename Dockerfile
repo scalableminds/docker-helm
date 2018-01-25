@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV HELM_VERSION="v2.7.2"
+ENV HELM_VERSION="v2.8.0"
 
 RUN apk add --no-cache bash ca-certificates coreutils curl findutils grep git python3 wget \
     && pip3 install aiohttp github-webhook pyyaml slackweb \
