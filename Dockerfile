@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV HELM_VERSION="v2.8.1"
+ENV HELM_VERSION="v2.8.2"
 
 RUN apk add --no-cache bash ca-certificates coreutils curl findutils grep git python3 wget \
     && pip3 install aiohttp github-webhook pyyaml slackweb \
@@ -13,5 +13,6 @@ RUN apk add --no-cache bash ca-certificates coreutils curl findutils grep git py
 
 RUN helm version --client
 RUN helm init -c
+RUN helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com
 
 ENTRYPOINT ["helm"]
